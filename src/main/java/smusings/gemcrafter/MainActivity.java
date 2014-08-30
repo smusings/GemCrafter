@@ -1,84 +1,55 @@
 package smusings.gemcrafter;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
-public class MainActivity extends Activity {
-
-    public Button calculateButton;
-    // the edit textx
-    public EditText need_flawless_royal;
-    public EditText need_royal;
-    public EditText need_flawless_imperial;
-    public EditText need_imperial;
-    public EditText need_marquise;
-
-
+public class MainActivity extends SetUpActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //define the button
+        calculateButton=(Button)findViewById(R.id.calculate_button);
+
+        //define the need
         need_flawless_royal=(EditText)findViewById(R.id.need_flawless_royal);
         need_royal=(EditText)findViewById(R.id.need_royal);
         need_flawless_imperial=(EditText)findViewById(R.id.need_flawless_imperial);
         need_imperial=(EditText)findViewById(R.id.need_imperial);
         need_marquise=(EditText)findViewById(R.id.need_marquise);
-        calculateButton=(Button)findViewById(R.id.calculate_button);
+
+        //define the have
+        have_flawless_royal=(EditText)findViewById(R.id.have_flawless_royal);
+        have_royal=(EditText)findViewById(R.id.have_royal);
+        have_flawless_imperial=(EditText)findViewById(R.id.have_flawless_imperial);
+        have_imperial=(EditText)findViewById(R.id.have_imperial);
+        have_marquise=(EditText)findViewById(R.id.have_marquise);
+
+        //set onclicklisteners
+        need_flawless_royal.setOnClickListener(flawlessRoyalNeedListener);
+        need_royal.setOnClickListener(RoyalNeedListener);
+        need_flawless_imperial.setOnClickListener(flawlessImperialNeedListener);
+        need_imperial.setOnClickListener(ImperialNeedListener);
+        need_marquise.setOnClickListener(marquiseNeedListener);
+
+        have_flawless_royal.setOnClickListener(flawlessRoyalHaveListener);
+        have_royal.setOnClickListener(RoyalHaveListener);
+        have_flawless_imperial.setOnClickListener(flawlessImperialHaveListener);
+        have_imperial.setOnClickListener(ImperialHaveListener);
+        have_marquise.setOnClickListener(marquiseHaveListener);
 
 
-        //set initial count to 0
-        need_flawless_royal.setText("0");
-        need_royal.setText("0");
-        need_flawless_imperial.setText("0");
-        need_imperial.setText("0");
-        need_marquise.setText("0");
 
-
-
-        calculateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //for the need
-                int needFlawlessRoyal=new Integer(need_flawless_royal.getText().toString()).intValue();
-                int needRoyal=new Integer(need_royal.getText().toString()).intValue();
-                int needFlawlessImperial=new Integer(need_flawless_imperial.getText().toString()).intValue();
-                int needImperial=new Integer(need_imperial.getText().toString()).intValue();
-
-                if (needFlawlessRoyal!=0){
-                    need_royal.setText(Integer.toString(needFlawlessRoyal*3));
-                    need_flawless_imperial.setText(Integer.toString(needFlawlessRoyal*9));
-                    need_imperial.setText(Integer.toString(needFlawlessRoyal*27));
-                    need_marquise.setText(Integer.toString(needFlawlessRoyal*81));
-                } else if(needRoyal != 0){
-                    need_flawless_imperial.setText(Integer.toString(needRoyal*3));
-                    need_imperial.setText(Integer.toString(needRoyal*9));
-                    need_marquise.setText(Integer.toString(needRoyal*27));
-                }else if(needFlawlessImperial !=0){
-
-                    need_imperial.setText(Integer.toString(needFlawlessImperial*3));
-                    need_marquise.setText(Integer.toString(needFlawlessImperial*9));
-
-                }else if(needImperial != 0){
-
-                    need_marquise.setText(Integer.toString(needImperial*3));
-
-                } else{
-                    Toast.makeText(MainActivity.this, "Please enter a valid number", Toast.LENGTH_LONG).show();
-                }
-
-            }
-        });
+        calculateButton.setOnClickListener(buttonListener);
     }
+
+
 
 
     @Override
