@@ -56,7 +56,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />
@@ -65,7 +65,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />
@@ -84,7 +84,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false"/>
@@ -93,7 +93,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />
@@ -112,7 +112,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />
@@ -121,7 +121,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />
@@ -140,7 +140,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />
@@ -149,7 +149,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />
@@ -168,7 +168,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />
@@ -177,7 +177,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
                 android:cursorVisible="false" />

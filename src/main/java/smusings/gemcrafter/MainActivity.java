@@ -44,6 +44,8 @@ public class MainActivity extends SetUpActivity {
         have_imperial.setOnClickListener(ImperialHaveListener);
         have_marquise.setOnClickListener(marquiseHaveListener);
 
+        zeroSum();
+
 
 
         calculateButton.setOnClickListener(buttonListener);

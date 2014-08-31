@@ -5,9 +5,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-/**
- * Created by etyulmenkov on 8/30/14.
- */
 public class SetUpActivity extends Activity {
 
     public Button calculateButton;
@@ -25,7 +22,6 @@ public class SetUpActivity extends Activity {
     public EditText have_marquise;
 
     //need listeners
-
     public View.OnClickListener flawlessRoyalNeedListener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -100,28 +96,54 @@ public class SetUpActivity extends Activity {
 
     //button listener
     public View.OnClickListener buttonListener=new View.OnClickListener() {
+        //so the ints are returning "" if empty giving error
+        //find a way around that
+
         @Override
         public void onClick(View v) {
             Integer needFR=new Integer(need_flawless_royal.getText().toString()).intValue();
-
-            Integer infR=new Integer(need_royal.getText().toString()).intValue();
-            Integer intFI=new Integer(need_flawless_imperial.getText().toString()).intValue();
-            Integer intI=new Integer(need_imperial.getText().toString()).intValue();
-            Integer intM=new Integer(need_marquise.getText().toString()).intValue();
+            Integer needR=new Integer(need_royal.getText().toString()).intValue();
+            Integer needFI=new Integer(need_flawless_imperial.getText().toString()).intValue();
+            Integer needI=new Integer(need_imperial.getText().toString()).intValue();
+            Integer needM=new Integer(need_marquise.getText().toString()).intValue();
 
 
             Integer haveFR=new Integer(have_flawless_royal.getText().toString()).intValue();
+            Integer haveR=new Integer(need_royal.getText().toString()).intValue();
+            Integer haveFI=new Integer(need_flawless_imperial.getText().toString()).intValue();
+            Integer haveI=new Integer(need_imperial.getText().toString()).intValue();
+            Integer haveM=new Integer(need_marquise.getText().toString()).intValue();
+
 
             Integer intFR=needFR-haveFR;
+            Integer intR=needR-haveR;
+            Integer intFI=needFI-haveFI;
+            Integer intI=needI-haveI;
+            Integer intM=needM-haveM;   //do i really need this one?
 
+
+            //can i break this up into methods?
             if(intFR > 0){
+                //TODO: make the numbers count the have
                 need_royal.setText(Integer.toString(intFR*3));
                 need_flawless_imperial.setText(Integer.toString(intFR*9));
                 need_imperial.setText(Integer.toString(intFR*27));
                 need_marquise.setText(Integer.toString(intFR*81));
-            } else if (intFR <= 0){
-                zeroSum();
+            } else if (intFR < 0){
+                need_flawless_royal.setText("0");
+            } else if (intFR==0){
+                //here we will keep going down the list to see if we need to count the others.
+                if (intR >0){
+                    need_flawless_imperial.setText(Integer.toString(intR*3));
+                    need_imperial.setText(Integer.toString(intR*9));
+                    need_marquise.setText(Integer.toString(intR*27));
+                } else if (intR < 0){
+                    need_royal.setText("0");
+                } else if (intR == 0){
+                    if(intFI > 0){
 
+                    }
+                }
             }
         }
     };
@@ -133,5 +155,11 @@ public class SetUpActivity extends Activity {
         need_flawless_imperial.setText("0");
         need_imperial.setText("0");
         need_marquise.setText("0");
+
+        have_flawless_royal.setText("0");
+        have_royal.setText("0");
+        have_flawless_imperial.setText("0");
+        have_imperial.setText("0");
+        have_marquise.setText("0");
     }
 }
