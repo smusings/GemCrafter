@@ -32,51 +32,6 @@ public class MainActivity extends SetUpActivity {
         have_imperial = (EditText)findViewById(R.id.have_imperial);
         have_marquise = (EditText)findViewById(R.id.have_marquise);
 
-        //define the need int
-        needFlawlessRoyal = Integer.parseInt(need_flawless_royal.getText().toString());
-        if (needFlawlessRoyal.equals("")){
-            needFlawlessRoyal = 0;
-        }
-        needRoyal = Integer.parseInt(need_royal.getText().toString());
-        if (needRoyal.equals("")){
-            needRoyal = 0;
-        }
-        needFlawlessImperial = Integer.parseInt(need_flawless_imperial.getText().toString());
-        if (needFlawlessImperial.equals("")){
-            needFlawlessImperial = 0;
-        }
-        needImperial = Integer.parseInt(need_imperial.getText().toString());
-        if (needImperial.equals("")){
-            needImperial = 0;
-        }
-        needMarquise = Integer.parseInt(need_marquise.getText().toString());
-        if (needMarquise.equals("")){
-            needMarquise = 0;
-        }
-
-        haveFlawlessRoyal = Integer.parseInt(have_flawless_royal.getText().toString());
-        if (haveFlawlessRoyal.equals("")){
-            haveFlawlessRoyal=0;
-        }
-        haveRoyal = Integer.parseInt(have_royal.getText().toString());
-        if (haveRoyal.equals("")){
-            haveRoyal=0;
-        }
-        haveFlawlessImperial = Integer.parseInt(have_flawless_imperial.getText().toString());
-        if (haveFlawlessImperial.equals("")){
-            haveFlawlessImperial=0;
-        }
-        haveImperial = Integer.parseInt(have_imperial.getText().toString());
-        if (haveImperial.equals("")){
-            haveImperial=0;
-        }
-        haveMarquise = Integer.parseInt(have_marquise.getText().toString());
-        if (haveMarquise.equals("")){
-            haveMarquise=0;
-        }
-
-
-
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

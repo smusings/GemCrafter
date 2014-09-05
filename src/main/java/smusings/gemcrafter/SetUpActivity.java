@@ -20,18 +20,6 @@ public class SetUpActivity extends Activity{
     public EditText have_imperial;
     public EditText have_marquise;
 
-    //the ints we need/have
-    public Integer needFlawlessRoyal;
-    public Integer needRoyal;
-    public Integer needFlawlessImperial;
-    public Integer needImperial;
-    public Integer needMarquise;
-    public Integer haveFlawlessRoyal;
-    public Integer haveRoyal;
-    public Integer haveFlawlessImperial;
-    public Integer haveImperial;
-    public Integer haveMarquise;
-
     /*
         each method will get the need-have count and do one of 3 results from the number gotten
 
@@ -42,7 +30,15 @@ public class SetUpActivity extends Activity{
      */
 
     public void flawlessRoyal(){
-        int flawless_Royal_Count = needFlawlessRoyal - haveFlawlessRoyal;
+        if (need_flawless_royal.getText().toString().matches("")){
+            need_flawless_royal.setText("0");
+        }
+        if (have_flawless_royal.getText().toString().matches("")){
+            have_flawless_royal.setText("0");
+        }
+
+        int flawless_Royal_Count = Integer.parseInt(need_flawless_royal.getText().toString())
+                - Integer.parseInt(have_flawless_royal.getText().toString());
 
         if (flawless_Royal_Count > 0){
             need_flawless_imperial.setText(Integer.toString(flawless_Royal_Count));
@@ -58,6 +54,13 @@ public class SetUpActivity extends Activity{
     }
 
     public void royalGem(){
+        if (need_royal.getText().toString().matches("")){
+            need_royal.setText("0");
+        }
+        if (have_royal.getText().toString().matches("")){
+            have_royal.setText("0");
+        }
+
         int royal_Count;
         if (Integer.parseInt(need_flawless_imperial.getText().toString()) == 0){
             royal_Count = (Integer.parseInt(need_royal.getText().toString()))
@@ -82,6 +85,13 @@ public class SetUpActivity extends Activity{
     }
 
     public void flawlessImperial(){
+        if (need_flawless_imperial.getText().toString().matches("")){
+            need_flawless_imperial.setText("0");
+        }
+        if (have_flawless_imperial.getText().toString().matches("")){
+            have_flawless_imperial.setText("0");
+        }
+
         int flawless_imperial_Count;
         if (Integer.parseInt(need_royal.getText().toString()) == 0){
             flawless_imperial_Count = (Integer.parseInt(need_flawless_imperial.getText().toString()))
@@ -105,6 +115,13 @@ public class SetUpActivity extends Activity{
     }
 
     public void imperialGem(){
+        if (need_imperial.getText().toString().matches("")){
+            need_imperial.setText("0");
+        }
+        if (have_imperial.getText().toString().matches("")){
+            have_imperial.setText("0");
+        }
+
         int imperial_Count;
         if (Integer.parseInt(need_flawless_imperial.getText().toString()) == 0){
             imperial_Count = (Integer.parseInt(need_imperial.getText().toString()))
@@ -129,6 +146,13 @@ public class SetUpActivity extends Activity{
     }
 
     public void marquiseCount(){
+        if (need_marquise.getText().toString().matches("")){
+            need_marquise.setText("0");
+        }
+        if (have_marquise.getText().toString().matches("")){
+            have_marquise.setText("0");
+        }
+
         int marquise_Count;
         if (Integer.parseInt(need_imperial.getText().toString()) == 0){
             marquise_Count = Integer.parseInt(need_marquise.getText().toString())
