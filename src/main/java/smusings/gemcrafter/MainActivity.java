@@ -3,6 +3,7 @@ package smusings.gemcrafter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -15,43 +16,74 @@ public class MainActivity extends SetUpActivity {
         setContentView(R.layout.activity_main);
 
         //define the button
-        calculateButton=(Button)findViewById(R.id.calculate_button);
+        calculateButton = (Button)findViewById(R.id.calculate_button);
 
         //define the need
-        need_flawless_royal=(EditText)findViewById(R.id.need_flawless_royal);
-        need_royal=(EditText)findViewById(R.id.need_royal);
-        need_flawless_imperial=(EditText)findViewById(R.id.need_flawless_imperial);
-        need_imperial=(EditText)findViewById(R.id.need_imperial);
-        need_marquise=(EditText)findViewById(R.id.need_marquise);
+        need_flawless_royal = (EditText)findViewById(R.id.need_flawless_royal);
+        need_royal = (EditText)findViewById(R.id.need_royal);
+        need_flawless_imperial = (EditText)findViewById(R.id.need_flawless_imperial);
+        need_imperial = (EditText)findViewById(R.id.need_imperial);
+        need_marquise = (EditText)findViewById(R.id.need_marquise);
 
         //define the have
-        have_flawless_royal=(EditText)findViewById(R.id.have_flawless_royal);
-        have_royal=(EditText)findViewById(R.id.have_royal);
-        have_flawless_imperial=(EditText)findViewById(R.id.have_flawless_imperial);
-        have_imperial=(EditText)findViewById(R.id.have_imperial);
-        have_marquise=(EditText)findViewById(R.id.have_marquise);
+        have_flawless_royal = (EditText)findViewById(R.id.have_flawless_royal);
+        have_royal = (EditText)findViewById(R.id.have_royal);
+        have_flawless_imperial = (EditText)findViewById(R.id.have_flawless_imperial);
+        have_imperial = (EditText)findViewById(R.id.have_imperial);
+        have_marquise = (EditText)findViewById(R.id.have_marquise);
 
-        //set onclicklisteners
-        need_flawless_royal.setOnClickListener(flawlessRoyalNeedListener);
-        need_royal.setOnClickListener(RoyalNeedListener);
-        need_flawless_imperial.setOnClickListener(flawlessImperialNeedListener);
-        need_imperial.setOnClickListener(ImperialNeedListener);
-        need_marquise.setOnClickListener(marquiseNeedListener);
+        //define the need int
+        needFlawlessRoyal = Integer.parseInt(need_flawless_royal.getText().toString());
+        if (needFlawlessRoyal.equals("")){
+            needFlawlessRoyal = 0;
+        }
+        needRoyal = Integer.parseInt(need_royal.getText().toString());
+        if (needRoyal.equals("")){
+            needRoyal = 0;
+        }
+        needFlawlessImperial = Integer.parseInt(need_flawless_imperial.getText().toString());
+        if (needFlawlessImperial.equals("")){
+            needFlawlessImperial = 0;
+        }
+        needImperial = Integer.parseInt(need_imperial.getText().toString());
+        if (needImperial.equals("")){
+            needImperial = 0;
+        }
+        needMarquise = Integer.parseInt(need_marquise.getText().toString());
+        if (needMarquise.equals("")){
+            needMarquise = 0;
+        }
 
-        have_flawless_royal.setOnClickListener(flawlessRoyalHaveListener);
-        have_royal.setOnClickListener(RoyalHaveListener);
-        have_flawless_imperial.setOnClickListener(flawlessImperialHaveListener);
-        have_imperial.setOnClickListener(ImperialHaveListener);
-        have_marquise.setOnClickListener(marquiseHaveListener);
+        haveFlawlessRoyal = Integer.parseInt(have_flawless_royal.getText().toString());
+        if (haveFlawlessRoyal.equals("")){
+            haveFlawlessRoyal=0;
+        }
+        haveRoyal = Integer.parseInt(have_royal.getText().toString());
+        if (haveRoyal.equals("")){
+            haveRoyal=0;
+        }
+        haveFlawlessImperial = Integer.parseInt(have_flawless_imperial.getText().toString());
+        if (haveFlawlessImperial.equals("")){
+            haveFlawlessImperial=0;
+        }
+        haveImperial = Integer.parseInt(have_imperial.getText().toString());
+        if (haveImperial.equals("")){
+            haveImperial=0;
+        }
+        haveMarquise = Integer.parseInt(have_marquise.getText().toString());
+        if (haveMarquise.equals("")){
+            haveMarquise=0;
+        }
 
-        zeroSum();
 
 
-
-        calculateButton.setOnClickListener(buttonListener);
+        calculateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flawlessRoyal();
+            }
+        });
     }
-
-
 
 
     @Override

@@ -1,11 +1,10 @@
 package smusings.gemcrafter;
 
 import android.app.Activity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class SetUpActivity extends Activity {
+public class SetUpActivity extends Activity{
 
     public Button calculateButton;
     // the edit text for need
@@ -21,145 +20,134 @@ public class SetUpActivity extends Activity {
     public EditText have_imperial;
     public EditText have_marquise;
 
-    //need listeners
-    public View.OnClickListener flawlessRoyalNeedListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            need_flawless_royal.setText("");
+    //the ints we need/have
+    public Integer needFlawlessRoyal;
+    public Integer needRoyal;
+    public Integer needFlawlessImperial;
+    public Integer needImperial;
+    public Integer needMarquise;
+    public Integer haveFlawlessRoyal;
+    public Integer haveRoyal;
+    public Integer haveFlawlessImperial;
+    public Integer haveImperial;
+    public Integer haveMarquise;
+
+    /*
+        each method will get the need-have count and do one of 3 results from the number gotten
+
+        if the number is not negative it goes to the next method inline
+        there it sees if it needs to start the calculation or continue it
+
+        this goes on until we reach the end
+     */
+
+    public void flawlessRoyal(){
+        int flawless_Royal_Count = needFlawlessRoyal - haveFlawlessRoyal;
+
+        if (flawless_Royal_Count > 0){
+            need_flawless_imperial.setText(Integer.toString(flawless_Royal_Count));
+            royalGem();
         }
-    };
-
-    public View.OnClickListener RoyalNeedListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            need_royal.setText("");
+        else if (flawless_Royal_Count < 0){
+            need_flawless_imperial.setText("0");
         }
-    };
-
-    public View.OnClickListener flawlessImperialNeedListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            need_flawless_imperial.setText("");
+        else if (flawless_Royal_Count == 0){
+            need_flawless_imperial.setText(Integer.toString(flawless_Royal_Count));
+            royalGem();
         }
-    };
-
-    public View.OnClickListener ImperialNeedListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            need_imperial.setText("");
-        }
-    };
-
-    public View.OnClickListener marquiseNeedListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            need_marquise.setText("");
-        }
-    };
-
-    // have listeners
-
-    public View.OnClickListener flawlessRoyalHaveListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            have_flawless_royal.setText("");
-        }
-    };
-
-    public View.OnClickListener RoyalHaveListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            have_royal.setText("");
-        }
-    };
-
-    public View.OnClickListener flawlessImperialHaveListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            have_flawless_imperial.setText("");
-        }
-    };
-
-    public View.OnClickListener ImperialHaveListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            have_imperial.setText("");
-        }
-    };
-
-    public View.OnClickListener marquiseHaveListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            have_marquise.setText("");
-        }
-    };
-
-    //button listener
-    public View.OnClickListener buttonListener=new View.OnClickListener() {
-        //so the ints are returning "" if empty giving error
-        //find a way around that
-
-        @Override
-        public void onClick(View v) {
-            Integer needFR=new Integer(need_flawless_royal.getText().toString()).intValue();
-            Integer needR=new Integer(need_royal.getText().toString()).intValue();
-            Integer needFI=new Integer(need_flawless_imperial.getText().toString()).intValue();
-            Integer needI=new Integer(need_imperial.getText().toString()).intValue();
-            Integer needM=new Integer(need_marquise.getText().toString()).intValue();
-
-
-            Integer haveFR=new Integer(have_flawless_royal.getText().toString()).intValue();
-            Integer haveR=new Integer(need_royal.getText().toString()).intValue();
-            Integer haveFI=new Integer(need_flawless_imperial.getText().toString()).intValue();
-            Integer haveI=new Integer(need_imperial.getText().toString()).intValue();
-            Integer haveM=new Integer(need_marquise.getText().toString()).intValue();
-
-
-            Integer intFR=needFR-haveFR;
-            Integer intR=needR-haveR;
-            Integer intFI=needFI-haveFI;
-            Integer intI=needI-haveI;
-            Integer intM=needM-haveM;   //do i really need this one?
-
-
-            //can i break this up into methods?
-            if(intFR > 0){
-                //TODO: make the numbers count the have
-                need_royal.setText(Integer.toString(intFR*3));
-                need_flawless_imperial.setText(Integer.toString(intFR*9));
-                need_imperial.setText(Integer.toString(intFR*27));
-                need_marquise.setText(Integer.toString(intFR*81));
-            } else if (intFR < 0){
-                need_flawless_royal.setText("0");
-            } else if (intFR==0){
-                //here we will keep going down the list to see if we need to count the others.
-                if (intR >0){
-                    need_flawless_imperial.setText(Integer.toString(intR*3));
-                    need_imperial.setText(Integer.toString(intR*9));
-                    need_marquise.setText(Integer.toString(intR*27));
-                } else if (intR < 0){
-                    need_royal.setText("0");
-                } else if (intR == 0){
-                    if(intFI > 0){
-
-                    }
-                }
-            }
-        }
-    };
-
-
-    public void zeroSum(){
-        need_flawless_royal.setText("0");
-        need_royal.setText("0");
-        need_flawless_imperial.setText("0");
-        need_imperial.setText("0");
-        need_marquise.setText("0");
-
-        have_flawless_royal.setText("0");
-        have_royal.setText("0");
-        have_flawless_imperial.setText("0");
-        have_imperial.setText("0");
-        have_marquise.setText("0");
     }
+
+    public void royalGem(){
+        int royal_Count;
+        if (Integer.parseInt(need_flawless_imperial.getText().toString()) == 0){
+            royal_Count = (Integer.parseInt(need_royal.getText().toString()))
+                    - Integer.parseInt(have_royal.getText().toString());
+        } else {
+            royal_Count = (Integer.parseInt(need_flawless_royal.getText().toString()) * 3)
+                    - Integer.parseInt(have_royal.getText().toString());
+        }
+
+            if (royal_Count > 0){
+                need_royal.setText(Integer.toString(royal_Count));
+                flawlessImperial();
+            }
+            else if (royal_Count < 0){
+                need_royal.setText("0");
+            }
+            else if (royal_Count == 0){
+                need_royal.setText(Integer.toString(royal_Count));
+                flawlessImperial();
+            }
+
+    }
+
+    public void flawlessImperial(){
+        int flawless_imperial_Count;
+        if (Integer.parseInt(need_royal.getText().toString()) == 0){
+            flawless_imperial_Count = (Integer.parseInt(need_flawless_imperial.getText().toString()))
+                    - Integer.parseInt(have_flawless_imperial.getText().toString());
+        } else {
+            flawless_imperial_Count = (Integer.parseInt(need_royal.getText().toString()))
+                    - Integer.parseInt(have_flawless_imperial.getText().toString());
+        }
+
+        if (flawless_imperial_Count > 0){
+            need_flawless_imperial.setText(Integer.toString(flawless_imperial_Count));
+            imperialGem();
+        }
+        else if (flawless_imperial_Count < 0){
+            need_flawless_imperial.setText("0");
+        }
+        else if (flawless_imperial_Count == 0){
+            need_flawless_imperial.setText(Integer.toString(flawless_imperial_Count));
+            imperialGem();
+        }
+    }
+
+    public void imperialGem(){
+        int imperial_Count;
+        if (Integer.parseInt(need_flawless_imperial.getText().toString()) == 0){
+            imperial_Count = (Integer.parseInt(need_imperial.getText().toString()))
+                    - Integer.parseInt(have_imperial.getText().toString());
+        } else {
+            imperial_Count = (Integer.parseInt(need_flawless_imperial.getText().toString())*3)
+                    - Integer.parseInt(have_imperial.getText().toString());
+        }
+
+
+        if (imperial_Count > 0){
+            need_imperial.setText(Integer.toString(imperial_Count));
+            marquiseCount();
+        }
+        else if (imperial_Count < 0){
+            need_imperial.setText("0");
+        }
+        else if (imperial_Count == 0){
+            need_imperial.setText(Integer.toString(imperial_Count));
+            marquiseCount();
+        }
+    }
+
+    public void marquiseCount(){
+        int marquise_Count;
+        if (Integer.parseInt(need_imperial.getText().toString()) == 0){
+            marquise_Count = Integer.parseInt(need_marquise.getText().toString())
+                    - Integer.parseInt(have_marquise.getText().toString());
+        } else {
+          marquise_Count = (Integer.parseInt(need_imperial.getText().toString())*3)
+                    - Integer.parseInt(have_marquise.getText().toString());
+        }
+
+
+        if (marquise_Count > 0){
+            need_marquise.setText(Integer.toString(marquise_Count));
+        }
+        else if (marquise_Count < 0){
+            need_marquise.setText("0");
+        }
+        else if (marquise_Count == 0){
+            need_marquise.setText(Integer.toString(marquise_Count));
+        }
+    }
+
 }
