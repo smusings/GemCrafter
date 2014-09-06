@@ -3,10 +3,12 @@ package smusings.gemcrafter;
 import android.app.Activity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class SetUpActivity extends Activity{
 
     public Button calculateButton;
+    public TextView gold_amount;
     // the edit text for need
     public EditText need_flawless_royal;
     public EditText need_royal;
@@ -21,12 +23,12 @@ public class SetUpActivity extends Activity{
     public EditText have_marquise;
 
     /*
-        each method will get the need-have count and do one of 3 results from the number gotten
+        First it checks to see if the edittext is blank, if so it sets it to 0
 
-        if the number is not negative it goes to the next method inline
-        there it sees if it needs to start the calculation or continue it
-
-        this goes on until we reach the end
+        then we get the int value of edittext, and do some maths and decesions
+        if less than 0 we stop and set it to 0
+        if greater than 0 we go forward
+        if 0 we go forward to see if we need to do more maths
      */
 
     public void flawlessRoyal(){
@@ -40,17 +42,18 @@ public class SetUpActivity extends Activity{
         int flawless_Royal_Count = Integer.parseInt(need_flawless_royal.getText().toString())
                 - Integer.parseInt(have_flawless_royal.getText().toString());
 
+
         if (flawless_Royal_Count > 0){
-            need_flawless_imperial.setText(Integer.toString(flawless_Royal_Count));
-            royalGem();
+            need_flawless_royal.setText(Integer.toString(flawless_Royal_Count));
         }
         else if (flawless_Royal_Count < 0){
-            need_flawless_imperial.setText("0");
+            need_flawless_royal.setText("0");
         }
         else if (flawless_Royal_Count == 0){
-            need_flawless_imperial.setText(Integer.toString(flawless_Royal_Count));
-            royalGem();
+            need_flawless_royal.setText(Integer.toString(flawless_Royal_Count));
         }
+
+        royalGem();
     }
 
     public void royalGem(){
@@ -62,7 +65,7 @@ public class SetUpActivity extends Activity{
         }
 
         int royal_Count;
-        if (Integer.parseInt(need_flawless_imperial.getText().toString()) == 0){
+        if (Integer.parseInt(need_flawless_royal.getText().toString()) == 0){
             royal_Count = (Integer.parseInt(need_royal.getText().toString()))
                     - Integer.parseInt(have_royal.getText().toString());
         } else {
@@ -72,15 +75,14 @@ public class SetUpActivity extends Activity{
 
             if (royal_Count > 0){
                 need_royal.setText(Integer.toString(royal_Count));
-                flawlessImperial();
             }
             else if (royal_Count < 0){
                 need_royal.setText("0");
             }
             else if (royal_Count == 0){
                 need_royal.setText(Integer.toString(royal_Count));
-                flawlessImperial();
             }
+        flawlessImperial();
 
     }
 
@@ -97,21 +99,20 @@ public class SetUpActivity extends Activity{
             flawless_imperial_Count = (Integer.parseInt(need_flawless_imperial.getText().toString()))
                     - Integer.parseInt(have_flawless_imperial.getText().toString());
         } else {
-            flawless_imperial_Count = (Integer.parseInt(need_royal.getText().toString()))
+            flawless_imperial_Count = (Integer.parseInt(need_royal.getText().toString())*3)
                     - Integer.parseInt(have_flawless_imperial.getText().toString());
         }
 
         if (flawless_imperial_Count > 0){
             need_flawless_imperial.setText(Integer.toString(flawless_imperial_Count));
-            imperialGem();
         }
         else if (flawless_imperial_Count < 0){
             need_flawless_imperial.setText("0");
         }
         else if (flawless_imperial_Count == 0){
             need_flawless_imperial.setText(Integer.toString(flawless_imperial_Count));
-            imperialGem();
         }
+        imperialGem();
     }
 
     public void imperialGem(){
@@ -134,15 +135,15 @@ public class SetUpActivity extends Activity{
 
         if (imperial_Count > 0){
             need_imperial.setText(Integer.toString(imperial_Count));
-            marquiseCount();
         }
         else if (imperial_Count < 0){
             need_imperial.setText("0");
         }
         else if (imperial_Count == 0){
             need_imperial.setText(Integer.toString(imperial_Count));
-            marquiseCount();
         }
+
+        marquiseCount();
     }
 
     public void marquiseCount(){
@@ -172,6 +173,33 @@ public class SetUpActivity extends Activity{
         else if (marquise_Count == 0){
             need_marquise.setText(Integer.toString(marquise_Count));
         }
+        totalGold();
     }
 
+    public void totalGold(){
+        int flawlessRoyalSum = Integer.parseInt(need_flawless_royal.getText().toString()) * 500000;
+        int RoyalSum = Integer.parseInt(need_royal.getText().toString()) * 400000;
+        int flawlessImperialSum = Integer.parseInt(need_flawless_imperial.getText().toString()) * 300000;
+        int ImperialSum = Integer.parseInt(need_imperial.getText().toString()) * 200000;
+
+        int totalSum = flawlessRoyalSum + RoyalSum + flawlessImperialSum + ImperialSum;
+
+        gold_amount.setText(Integer.toString(totalSum));
+
+
+    }
+
+    public void zeroAll(){
+        need_flawless_royal.setText("0");
+        need_royal.setText("0");
+        need_flawless_imperial.setText("0");
+        need_imperial.setText("0");
+        need_marquise.setText("0");
+
+        have_flawless_royal.setText("0");
+        have_royal.setText("0");
+        have_flawless_imperial.setText("0");
+        have_imperial.setText("0");
+        have_marquise.setText("0");
+    }
 }
