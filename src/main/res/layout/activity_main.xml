@@ -15,20 +15,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <ImageView
+                android:background="@drawable/marq"
+                android:alpha="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/marq"
-                android:alpha="0"/>
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
                 android:layout_margin="1dp"
                 android:text="Need"
                 android:textSize="20dp"
@@ -36,9 +36,8 @@
                 android:padding="5dp"
                 android:background="@color/opaqueBlack"/>
             <TextView
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:text="Have"
                 android:textSize="20dp"
@@ -48,18 +47,18 @@
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/flawless_royal"
-                android:gravity="center"/>
+                android:background="@drawable/flawless_royal"/>
             <EditText
                 android:id="@+id/need_flawless_royal"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -68,9 +67,8 @@
                 android:cursorVisible="false" />
             <EditText
                 android:id="@+id/have_flawless_royal"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -80,18 +78,18 @@
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/royal"
-                android:gravity="center"/>
+                android:background="@drawable/royal"/>
             <EditText
                 android:id="@+id/need_royal"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -100,9 +98,8 @@
                 android:cursorVisible="false"/>
             <EditText
                 android:id="@+id/have_royal"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -112,18 +109,18 @@
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/flawless_imperial"
-                android:gravity="center"/>
+                android:background="@drawable/flawless_imperial"/>
             <EditText
                 android:id="@+id/need_flawless_imperial"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -132,9 +129,8 @@
                 android:cursorVisible="false" />
             <EditText
                 android:id="@+id/have_flawless_imperial"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -144,18 +140,18 @@
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/imperial"
-                android:gravity="center"/>
+                android:background="@drawable/imperial"/>
             <EditText
                 android:id="@+id/need_imperial"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -164,9 +160,8 @@
                 android:cursorVisible="false" />
             <EditText
                 android:id="@+id/have_imperial"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -176,18 +171,18 @@
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/marq"
-                android:gravity="center"/>
+                android:background="@drawable/marq"/>
             <EditText
                 android:id="@+id/need_marquise"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -196,9 +191,8 @@
                 android:cursorVisible="false" />
             <EditText
                 android:id="@+id/have_marquise"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -208,8 +202,9 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
         <ImageView
             android:background="@drawable/ic_launcher"
             android:layout_width="wrap_content"
