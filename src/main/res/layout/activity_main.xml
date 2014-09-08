@@ -17,8 +17,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
@@ -49,16 +48,18 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/flawless_royal"/>
+                android:background="@drawable/flawless_royal"
+                android:layout_gravity="center"/>
             <EditText
                 android:id="@+id/need_flawless_royal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -68,7 +69,8 @@
             <EditText
                 android:id="@+id/have_flawless_royal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -80,16 +82,18 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/royal"/>
+                android:background="@drawable/royal"
+                android:layout_gravity="center"/>
             <EditText
                 android:id="@+id/need_royal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -99,7 +103,8 @@
             <EditText
                 android:id="@+id/have_royal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -111,16 +116,18 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/flawless_imperial"/>
+                android:background="@drawable/flawless_imperial"
+                android:layout_gravity="center"/>
             <EditText
                 android:id="@+id/need_flawless_imperial"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -130,7 +137,8 @@
             <EditText
                 android:id="@+id/have_flawless_imperial"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -142,16 +150,18 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/imperial"/>
+                android:background="@drawable/imperial"
+                android:layout_gravity="center"/>
             <EditText
                 android:id="@+id/need_imperial"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -161,7 +171,8 @@
             <EditText
                 android:id="@+id/have_imperial"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -173,16 +184,18 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/marq"/>
+                android:background="@drawable/marq"
+                android:layout_gravity="center"/>
             <EditText
                 android:id="@+id/need_marquise"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -192,7 +205,8 @@
             <EditText
                 android:id="@+id/have_marquise"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:background="@color/opaquerBlack"
                 android:inputType="number"
@@ -206,7 +220,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
         <ImageView
-            android:background="@drawable/ic_launcher"
+            android:background="@drawable/gold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
