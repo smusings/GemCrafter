@@ -35,7 +35,7 @@
                 android:padding="5dp"
                 android:background="@color/opaqueBlack"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:text="Have"
@@ -224,13 +224,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="1dp"/>
+            android:layout_margin="5dp"/>
         <TextView
             android:layout_margin="1dp"
             android:text="0"
             android:textSize="30dp"
             android:gravity="center"
             android:id="@+id/gold_display"
+            android:background="@color/opaquerBlack"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         </LinearLayout>
