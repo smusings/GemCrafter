@@ -8,20 +8,22 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gem Calculator"
+        android:text="@string/gem_calculator"
         android:gravity="center"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:padding="10dp"/>
     <LinearLayout
+        android:baselineAligned="false"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
-                android:background="@drawable/marq"
+                android:contentDescription="@string/border_image"
+                android:background="@drawable/marq_ruby"
                 android:alpha="0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -29,8 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
-                android:text="Need"
-                android:textSize="20dp"
+                android:text="@string/need"
+                android:textSize="20sp"
                 android:gravity="center"
                 android:padding="5dp"
                 android:background="@color/opaqueBlack"/>
@@ -38,8 +40,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
-                android:text="Have"
-                android:textSize="20dp"
+                android:text="@string/have"
+                android:textSize="20sp"
                 android:gravity="center"
                 android:padding="5dp"
                 android:background="@color/opaqueBlack"/>
@@ -53,8 +55,9 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/flawless_royal"
-                android:layout_gravity="center"/>
+                android:background="@drawable/flawless_royal_ruby"
+                android:layout_gravity="center"
+                android:contentDescription="@string/flaw_royal_gem"/>
             <EditText
                 android:id="@+id/need_flawless_royal"
                 android:layout_width="match_parent"
@@ -65,7 +68,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_need"/>
             <EditText
                 android:id="@+id/have_flawless_royal"
                 android:layout_width="match_parent"
@@ -76,7 +80,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_have" />
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
@@ -87,8 +92,9 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/royal"
-                android:layout_gravity="center"/>
+                android:background="@drawable/royal_ruby"
+                android:layout_gravity="center"
+                android:contentDescription="@string/royal_gem"/>
             <EditText
                 android:id="@+id/need_royal"
                 android:layout_width="match_parent"
@@ -99,7 +105,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false"/>
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_need"/>
             <EditText
                 android:id="@+id/have_royal"
                 android:layout_width="match_parent"
@@ -110,7 +117,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_have" />
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
@@ -121,8 +129,9 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/flawless_imperial"
-                android:layout_gravity="center"/>
+                android:background="@drawable/flawless_imperial_ruby"
+                android:layout_gravity="center"
+                android:contentDescription="@string/flaw_imperial_gem"/>
             <EditText
                 android:id="@+id/need_flawless_imperial"
                 android:layout_width="match_parent"
@@ -133,7 +142,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_need" />
             <EditText
                 android:id="@+id/have_flawless_imperial"
                 android:layout_width="match_parent"
@@ -144,7 +154,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_have" />
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
@@ -155,8 +166,9 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/imperial"
-                android:layout_gravity="center"/>
+                android:background="@drawable/imperial_ruby"
+                android:layout_gravity="center"
+                android:contentDescription="@string/imperial_gem"/>
             <EditText
                 android:id="@+id/need_imperial"
                 android:layout_width="match_parent"
@@ -167,7 +179,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_need" />
             <EditText
                 android:id="@+id/have_imperial"
                 android:layout_width="match_parent"
@@ -178,7 +191,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_have" />
         </LinearLayout>
         <LinearLayout
             android:layout_margin="5dp"
@@ -189,8 +203,9 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/marq"
-                android:layout_gravity="center"/>
+                android:background="@drawable/marq_ruby"
+                android:layout_gravity="center"
+                android:contentDescription="@string/marq_gem"/>
             <EditText
                 android:id="@+id/need_marquise"
                 android:layout_width="match_parent"
@@ -201,7 +216,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_need" />
             <EditText
                 android:id="@+id/have_marquise"
                 android:layout_width="match_parent"
@@ -212,7 +228,8 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:contentDescription="@string/et_have" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -224,11 +241,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:contentDescription="@string/gold_image"/>
         <TextView
             android:layout_margin="1dp"
-            android:text="0"
-            android:textSize="30dp"
+            android:text="@string/zero"
+            android:textSize="30sp"
             android:gravity="center"
             android:id="@+id/gold_display"
             android:background="@color/opaquerBlack"
@@ -239,5 +257,5 @@
         android:id="@+id/calculate_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate"/>
+        android:text="@string/calculate"/>
 </LinearLayout>

@@ -4,5 +4,19 @@
     <string name="app_name">GemCrafter</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_reset">Reset</string>
+    <string name="gem_calculator">Gem Calculator</string>
+    <string name="calculate">Calculate</string>
+    <string name="zero">0</string>
+    <string name="need">Need</string>
+    <string name="have">Have</string>
+    <string name="border_image">Sets the layout width we need</string>
+    <string name="flaw_royal_gem">Image of the Flawless Royal Gem</string>
+    <string name="royal_gem">Image of the Royal Gem</string>
+    <string name="flaw_imperial_gem">Image of the Flawless Imperial Gem</string>
+    <string name="imperial_gem">Image of the Imperial Gem</string>
+    <string name="marq_gem">Image of the Marquise Gem</string>
+    <string name="et_have">Textbox for how many gems you have</string>
+    <string name="et_need">Textbox for how many gems you need</string>
+    <string name="gold_image">Image to represent gold</string>
 
 </resources>

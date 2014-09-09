@@ -177,18 +177,21 @@ public class SetUpActivity extends Activity{
     }
 
     public void totalGold(){
+        //multiplies how many gems you need times the cost to make one of those gems
         int flawlessRoyalSum = Integer.parseInt(need_flawless_royal.getText().toString()) * 500000;
         int RoyalSum = Integer.parseInt(need_royal.getText().toString()) * 400000;
         int flawlessImperialSum = Integer.parseInt(need_flawless_imperial.getText().toString()) * 300000;
         int ImperialSum = Integer.parseInt(need_imperial.getText().toString()) * 200000;
 
+        //sums up the total amount of gold needed to make a gem
         int totalSum = flawlessRoyalSum + RoyalSum + flawlessImperialSum + ImperialSum;
 
+        //sets the gold amount to text
         gold_amount.setText(Integer.toString(totalSum));
-
-
     }
 
+    //method to reset the counts
+    //may not need we will see.
     public void zeroAll(){
         need_flawless_royal.setText("0");
         need_royal.setText("0");
