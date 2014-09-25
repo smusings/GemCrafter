@@ -45,18 +45,38 @@ public class GemDialogFragment extends DialogFragment {
                     case 1:
                         //topaz
                         Toast.makeText(getActivity(), "topaz", Toast.LENGTH_SHORT).show();
+                        flawless_royal_image.setImageResource(R.drawable.flawless_royal_topaz);
+                        royal_image.setImageResource(R.drawable.royal_topaz);
+                        flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_topaz);
+                        imperal_image.setImageResource(R.drawable.imperial_topaz);
+                        marquise_image.setImageResource(R.drawable.marq_topaz);
                         break;
                     case 2:
                         //emerald
                         Toast.makeText(getActivity(), "emerald", Toast.LENGTH_SHORT).show();
+                        flawless_royal_image.setImageResource(R.drawable.flawless_royal_emerald);
+                        royal_image.setImageResource(R.drawable.royal_emerald);
+                        flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_emerald);
+                        imperal_image.setImageResource(R.drawable.imperial_emerald);
+                        marquise_image.setImageResource(R.drawable.marq_emerald);
                         break;
                     case 3:
                         //amethyst
                         Toast.makeText(getActivity(), "amethyst", Toast.LENGTH_SHORT).show();
+                        flawless_royal_image.setImageResource(R.drawable.flawless_royal_amethyst);
+                        royal_image.setImageResource(R.drawable.royal_amethyst);
+                        flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_amethyst);
+                        imperal_image.setImageResource(R.drawable.imperial_amethyst);
+                        marquise_image.setImageResource(R.drawable.marq_amethyst);
                         break;
                     case 4:
                         //diamond
                         Toast.makeText(getActivity(), "diamond", Toast.LENGTH_SHORT).show();
+                        flawless_royal_image.setImageResource(R.drawable.flawless_royal_diamond);
+                        royal_image.setImageResource(R.drawable.royal_diamond);
+                        flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_diamond);
+                        imperal_image.setImageResource(R.drawable.imperial_diamond);
+                        marquise_image.setImageResource(R.drawable.marq_diamond);
                         break;
                 }
             }
