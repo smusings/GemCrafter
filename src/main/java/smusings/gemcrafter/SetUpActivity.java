@@ -1,14 +1,11 @@
 package smusings.gemcrafter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class SetUpActivity extends Activity implements
-        GemDialogFragment.GemDialogListener{
+public class SetUpActivity extends Activity {
 
     public Button calculateButton;
     public TextView gold_amount;
@@ -192,25 +189,4 @@ public class SetUpActivity extends Activity implements
         //sets the gold amount to text
         gold_amount.setText(Integer.toString(totalSum));
     }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Integer n = intent.getIntExtra("key", -1);
-
-        if (n == 0) {
-            Toast.makeText(this, "0", Toast.LENGTH_SHORT).show();
-        } else if (n == 1) {
-            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
-        } else if (n == 2) {
-            Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
-        } else if (n == 3) {
-            Toast.makeText(this, "3", Toast.LENGTH_SHORT).show();
-        } else if (n == 4) {
-            Toast.makeText(this, "4", Toast.LENGTH_SHORT).show();
-        } else if (n == -1) {
-            Toast.makeText(this, "-1", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 }

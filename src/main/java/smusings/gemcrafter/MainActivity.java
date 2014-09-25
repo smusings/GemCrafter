@@ -72,7 +72,7 @@ public class MainActivity extends SetUpActivity {
             have_marquise.setText("0");
             return true;
         }
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_gem_type) {
             DialogFragment dialogFragment = new GemDialogFragment();
             dialogFragment.show(getFragmentManager(), "GemDialogFragment");
         }

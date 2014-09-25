@@ -5,7 +5,7 @@
         android:title="@string/action_reset"
         android:orderInCategory="100"
         android:showAsAction="never" />
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/action_gem_type"
         android:title="@string/action_settings"
         android:showAsAction="never" />
 </menu>

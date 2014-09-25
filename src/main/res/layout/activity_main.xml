@@ -56,7 +56,7 @@
                 android:id="@+id/flawless_royal_gem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/flawless_royal_ruby"
+                android:src="@drawable/flawless_royal_ruby"
                 android:layout_gravity="center"
                 android:contentDescription="@string/flaw_royal_gem"/>
             <EditText
@@ -94,7 +94,7 @@
                 android:id="@+id/royal_gem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/royal_ruby"
+                android:src="@drawable/royal_ruby"
                 android:layout_gravity="center"
                 android:contentDescription="@string/royal_gem"/>
             <EditText
@@ -132,7 +132,7 @@
                 android:id = "@+id/flawless_imperial_gem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/flawless_imperial_ruby"
+                android:src="@drawable/flawless_imperial_ruby"
                 android:layout_gravity="center"
                 android:contentDescription="@string/flaw_imperial_gem"/>
             <EditText
@@ -170,7 +170,7 @@
                 android:id="@+id/imperial_gem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/imperial_ruby"
+                android:src="@drawable/imperial_ruby"
                 android:layout_gravity="center"
                 android:contentDescription="@string/imperial_gem"/>
             <EditText
@@ -206,9 +206,9 @@
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/marquise_gem"
+                android:src="@drawable/marq_ruby"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/marq_ruby"
                 android:layout_gravity="center"
                 android:contentDescription="@string/marq_gem"/>
             <EditText

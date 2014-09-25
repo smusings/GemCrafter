@@ -4,7 +4,7 @@
     <string name="app_name">GemCrafter</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_reset">Reset</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_gem_type">Gem Type</string>
     <string name="gem_calculator">Gem Calculator</string>
     <string name="calculate">Calculate</string>
     <string name="zero">0</string>

@@ -1,20 +1,14 @@
 package smusings.gemcrafter;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
 public class GemDialogFragment extends DialogFragment {
-
-    static GemDialogFragment newInstance(){
-        return new GemDialogFragment();
-    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
@@ -34,8 +28,6 @@ public class GemDialogFragment extends DialogFragment {
             public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
                     case 0:
-                        //ruby
-                        Toast.makeText(getActivity(), "ruby", Toast.LENGTH_SHORT).show();
                         flawless_royal_image.setImageResource(R.drawable.flawless_royal_ruby);
                         royal_image.setImageResource(R.drawable.royal_ruby);
                         flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_ruby);
@@ -43,8 +35,6 @@ public class GemDialogFragment extends DialogFragment {
                         marquise_image.setImageResource(R.drawable.marq_ruby);
                         break;
                     case 1:
-                        //topaz
-                        Toast.makeText(getActivity(), "topaz", Toast.LENGTH_SHORT).show();
                         flawless_royal_image.setImageResource(R.drawable.flawless_royal_topaz);
                         royal_image.setImageResource(R.drawable.royal_topaz);
                         flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_topaz);
@@ -52,8 +42,6 @@ public class GemDialogFragment extends DialogFragment {
                         marquise_image.setImageResource(R.drawable.marq_topaz);
                         break;
                     case 2:
-                        //emerald
-                        Toast.makeText(getActivity(), "emerald", Toast.LENGTH_SHORT).show();
                         flawless_royal_image.setImageResource(R.drawable.flawless_royal_emerald);
                         royal_image.setImageResource(R.drawable.royal_emerald);
                         flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_emerald);
@@ -61,8 +49,6 @@ public class GemDialogFragment extends DialogFragment {
                         marquise_image.setImageResource(R.drawable.marq_emerald);
                         break;
                     case 3:
-                        //amethyst
-                        Toast.makeText(getActivity(), "amethyst", Toast.LENGTH_SHORT).show();
                         flawless_royal_image.setImageResource(R.drawable.flawless_royal_amethyst);
                         royal_image.setImageResource(R.drawable.royal_amethyst);
                         flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_amethyst);
@@ -70,8 +56,6 @@ public class GemDialogFragment extends DialogFragment {
                         marquise_image.setImageResource(R.drawable.marq_amethyst);
                         break;
                     case 4:
-                        //diamond
-                        Toast.makeText(getActivity(), "diamond", Toast.LENGTH_SHORT).show();
                         flawless_royal_image.setImageResource(R.drawable.flawless_royal_diamond);
                         royal_image.setImageResource(R.drawable.royal_diamond);
                         flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_diamond);
@@ -84,21 +68,4 @@ public class GemDialogFragment extends DialogFragment {
         return builder.create();
     }
 
-    public interface GemDialogListener{
-    }
-
-    GemDialogListener mListener;
-
-    @Override
-    public void onAttach(Activity activity){
-        super.onAttach(activity);
-
-        try {
-            mListener = (GemDialogListener) activity;
-        }
-        catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must impliemnt GemDialogListener");
-        }
-    }
 }
