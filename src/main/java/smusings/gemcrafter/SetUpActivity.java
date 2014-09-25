@@ -1,11 +1,14 @@
 package smusings.gemcrafter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class SetUpActivity extends Activity{
+public class SetUpActivity extends Activity implements
+        GemDialogFragment.GemDialogListener{
 
     public Button calculateButton;
     public TextView gold_amount;
@@ -190,19 +193,24 @@ public class SetUpActivity extends Activity{
         gold_amount.setText(Integer.toString(totalSum));
     }
 
-    //method to reset the counts
-    //may not need we will see.
-    public void zeroAll(){
-        need_flawless_royal.setText("0");
-        need_royal.setText("0");
-        need_flawless_imperial.setText("0");
-        need_imperial.setText("0");
-        need_marquise.setText("0");
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Integer n = intent.getIntExtra("key", -1);
 
-        have_flawless_royal.setText("0");
-        have_royal.setText("0");
-        have_flawless_imperial.setText("0");
-        have_imperial.setText("0");
-        have_marquise.setText("0");
+        if (n == 0) {
+            Toast.makeText(this, "0", Toast.LENGTH_SHORT).show();
+        } else if (n == 1) {
+            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
+        } else if (n == 2) {
+            Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
+        } else if (n == 3) {
+            Toast.makeText(this, "3", Toast.LENGTH_SHORT).show();
+        } else if (n == 4) {
+            Toast.makeText(this, "4", Toast.LENGTH_SHORT).show();
+        } else if (n == -1) {
+            Toast.makeText(this, "-1", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }

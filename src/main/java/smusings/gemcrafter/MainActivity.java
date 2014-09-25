@@ -1,5 +1,6 @@
 package smusings.gemcrafter;
 
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -70,6 +71,10 @@ public class MainActivity extends SetUpActivity {
             have_imperial.setText("0");
             have_marquise.setText("0");
             return true;
+        }
+        if (id == R.id.action_settings) {
+            DialogFragment dialogFragment = new GemDialogFragment();
+            dialogFragment.show(getFragmentManager(), "GemDialogFragment");
         }
         return super.onOptionsItemSelected(item);
     }
