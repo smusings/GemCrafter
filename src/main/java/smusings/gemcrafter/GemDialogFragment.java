@@ -15,7 +15,9 @@ public class GemDialogFragment extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+        //our array to show menu options
         String[] gems = new String[] {"Ruby", "Topaz", "Emerald", "Amethyst", "Diamond"};
+
 
         final ImageView flawless_royal_image = (ImageView)getActivity().findViewById(R.id.flawless_royal_gem);
         final ImageView royal_image = (ImageView)getActivity().findViewById(R.id.royal_gem);
@@ -67,5 +69,4 @@ public class GemDialogFragment extends DialogFragment {
         });
         return builder.create();
     }
-
 }

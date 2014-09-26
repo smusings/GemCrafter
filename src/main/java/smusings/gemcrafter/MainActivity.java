@@ -34,6 +34,15 @@ public class MainActivity extends SetUpActivity {
         have_flawless_imperial = (EditText) findViewById(R.id.have_flawless_imperial);
         have_imperial = (EditText) findViewById(R.id.have_imperial);
         have_marquise = (EditText) findViewById(R.id.have_marquise);
+/*
+        //define the Integers
+        needFlawlessImperial = Integer.parseInt(need_flawless_imperial.getText().toString());
+        needImperial = Integer.parseInt(need_imperial.getText().toString());
+        needMarquiese = Integer.parseInt(need_marquise.getText().toString());
+        haveFlawlessImperial = Integer.parseInt(have_flawless_imperial.getText().toString());
+        haveImperial = Integer.parseInt(have_imperial.getText().toString());
+        haveMarquiese = Integer.parseInt(have_marquise.getText().toString());
+        */
 
         //onclick runs flawlessRoyal, which triggers a chain of methods
         calculateButton.setOnClickListener(new View.OnClickListener() {
