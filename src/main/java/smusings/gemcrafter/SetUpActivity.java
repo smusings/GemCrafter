@@ -1,6 +1,7 @@
 package smusings.gemcrafter;
 
 import android.app.Activity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -183,7 +184,6 @@ public class SetUpActivity extends Activity {
         marquiseCount();
     }
 
-
     public void marquiseCount(){
         //check to see if blank, if blank we set to 0
         if (need_marquise.getText().toString().matches("")){
@@ -226,4 +226,13 @@ public class SetUpActivity extends Activity {
         //sets the gold amount to text
         gold_amount.setText(Integer.toString(totalSum));
     }
+
+
+    View.OnClickListener clearField = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            ((EditText) v).setText("");
+        }
+    };
 }
