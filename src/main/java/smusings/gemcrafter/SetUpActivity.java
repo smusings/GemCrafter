@@ -51,6 +51,40 @@ public class SetUpActivity extends Activity {
         return gemCount;
     }
 
+    public void amountNeeded(int count, EditText need){
+        if (count >= 0){
+            need.setText(Integer.toString(count));
+        }
+        else if (count < 0){
+            //depending on what it is we need to zero different things for money calc
+            if (need == need_flawless_royal){
+                need_flawless_royal.setText("0");
+                need_royal.setText("0");
+                need_flawless_imperial.setText("0");
+                need_imperial.setText("0");
+                need_marquise.setText("0");
+            }
+            else if (need == need_royal){
+                need_royal.setText("0");
+                need_flawless_imperial.setText("0");
+                need_imperial.setText("0");
+                need_marquise.setText("0");
+            }
+            else if (need == need_flawless_imperial){
+                need_flawless_imperial.setText("0");
+                need_imperial.setText("0");
+                need_marquise.setText("0");
+            }
+            else if (need == need_imperial){
+                need_imperial.setText("0");
+                need_marquise.setText("0");
+            }
+            else if (need == need_marquise){
+                need_marquise.setText("0");
+            }
+        }
+    }
+
     public void flawlessRoyal(){
         //check to see if blank, if blank we set to 0
         if (need_flawless_royal.getText().toString().matches("")){
@@ -68,24 +102,12 @@ public class SetUpActivity extends Activity {
         //maths to see how many we need
         flawless_Royal_Count = needFlawlessRoyal - haveFlawlessRoyal;
 
-
         //number determines what we do
-        if (flawless_Royal_Count > 0){
-            need_flawless_royal.setText(Integer.toString(flawless_Royal_Count));
-        }
-        else if (flawless_Royal_Count < 0){
-            //sets rest to 0 for when we caluclate price
-            need_flawless_royal.setText("0");
-            need_royal.setText("0");
-            need_flawless_imperial.setText("0");
-            need_imperial.setText("0");
-            need_marquise.setText("0");
-        }
-        else if (flawless_Royal_Count == 0){
-            need_flawless_royal.setText(Integer.toString(flawless_Royal_Count));
-        }
+        amountNeeded(flawless_Royal_Count, need_flawless_royal);
 
         //send to next gem
+        need_flawless_royal.setCursorVisible(false);
+        have_flawless_royal.setCursorVisible(false);
         royalGem();
     }
 
@@ -106,18 +128,11 @@ public class SetUpActivity extends Activity {
         royal_Count = getGemCount(flawless_Royal_Count, needRoyal, haveRoyal);
 
         //numebr determiend what we do
-        if (royal_Count > 0){
-            need_royal.setText(Integer.toString(royal_Count));
-        }
-        else if (royal_Count < 0){
-            need_royal.setText("0");
-            need_flawless_imperial.setText("0");
-            need_imperial.setText("0");
-            need_marquise.setText("0");
-        }
-        else if (royal_Count == 0){
-            need_royal.setText(Integer.toString(royal_Count));
-        }
+        amountNeeded(royal_Count, need_royal);
+
+
+        need_royal.setCursorVisible(false);
+        have_royal.setCursorVisible(false);
         flawlessImperial();
 
     }
@@ -139,17 +154,10 @@ public class SetUpActivity extends Activity {
                 needFlawlessImperial, haveFlawlessImperial);
 
         //number determiend what we do
-        if (flawless_imperial_Count > 0){
-            need_flawless_imperial.setText(Integer.toString(flawless_imperial_Count));
-        }
-        else if (flawless_imperial_Count < 0){
-            need_flawless_imperial.setText("0");
-            need_imperial.setText("0");
-            need_marquise.setText("0");
-        }
-        else if (flawless_imperial_Count == 0){
-            need_flawless_imperial.setText(Integer.toString(flawless_imperial_Count));
-        }
+       amountNeeded(flawless_imperial_Count, need_flawless_imperial);
+
+        need_flawless_imperial.setCursorVisible(false);
+        have_flawless_imperial.setCursorVisible(false);
         imperialGem();
     }
 
@@ -171,16 +179,10 @@ public class SetUpActivity extends Activity {
                 needImperial, haveImperial);
 
         //number determined what we do
-        if (imperial_Count > 0){
-            need_imperial.setText(Integer.toString(imperial_Count));
-        }
-        else if (imperial_Count < 0){
-            need_imperial.setText("0");
-        }
-        else if (imperial_Count == 0){
-            need_imperial.setText(Integer.toString(imperial_Count));
-        }
+        amountNeeded(imperial_Count, need_imperial);
 
+        need_imperial.setCursorVisible(false);
+        have_imperial.setCursorVisible(false);
         marquiseCount();
     }
 
@@ -200,16 +202,10 @@ public class SetUpActivity extends Activity {
                 needMarquiese, haveMarquiese);
 
         //number determines what we do
-        if (marquise_Count > 0){
-            need_marquise.setText(Integer.toString(marquise_Count));
-        }
-        else if (marquise_Count < 0){
-            need_marquise.setText("0");
-        }
-        else if (marquise_Count == 0){
-            need_marquise.setText(Integer.toString(marquise_Count));
-        }
+        amountNeeded(marquise_Count, need_marquise);
 
+        need_marquise.setCursorVisible(false);
+        have_marquise.setCursorVisible(false);
         totalGold();
     }
 
@@ -227,12 +223,8 @@ public class SetUpActivity extends Activity {
         gold_amount.setText(Integer.toString(totalSum));
     }
 
-
-    View.OnClickListener clearField = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-
-            ((EditText) v).setText("");
-        }
-    };
+    public void clearFieldTest(View v){
+        ((EditText) v).setText("");
+        ((EditText) v).setCursorVisible(true);
+    }
 }
