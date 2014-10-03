@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -57,6 +58,13 @@ public class MainActivity extends SetUpActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
+        final ImageView flawless_royal_image = (ImageView)findViewById(R.id.flawless_royal_gem);
+        final ImageView royal_image = (ImageView)findViewById(R.id.royal_gem);
+        final ImageView flawless_imperal_image = (ImageView)findViewById(R.id.flawless_imperial_gem);
+        final ImageView imperal_image = (ImageView)findViewById(R.id.imperial_gem);
+        final ImageView marquise_image = (ImageView)findViewById(R.id.marquise_gem);
+
         int id = item.getItemId();
         if (id == R.id.action_reset) {
             need_flawless_royal.setText("0");
@@ -71,6 +79,41 @@ public class MainActivity extends SetUpActivity {
             have_imperial.setText("0");
             have_marquise.setText("0");
             return true;
+        }
+        if (id == R.id.action_amethyst){
+            flawless_royal_image.setImageResource(R.drawable.flawless_royal_amethyst);
+            royal_image.setImageResource(R.drawable.royal_amethyst);
+            flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_amethyst);
+            imperal_image.setImageResource(R.drawable.imperial_amethyst);
+            marquise_image.setImageResource(R.drawable.marq_amethyst);
+        }
+        if (id == R.id.action_diamond){
+            flawless_royal_image.setImageResource(R.drawable.flawless_royal_diamond);
+            royal_image.setImageResource(R.drawable.royal_diamond);
+            flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_diamond);
+            imperal_image.setImageResource(R.drawable.imperial_diamond);
+            marquise_image.setImageResource(R.drawable.marq_diamond);
+        }
+        if (id == R.id.action_Emerald){
+            flawless_royal_image.setImageResource(R.drawable.flawless_royal_emerald);
+            royal_image.setImageResource(R.drawable.royal_emerald);
+            flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_emerald);
+            imperal_image.setImageResource(R.drawable.imperial_emerald);
+            marquise_image.setImageResource(R.drawable.marq_emerald);
+        }
+        if (id == R.id.action_Ruby){
+            flawless_royal_image.setImageResource(R.drawable.flawless_royal_ruby);
+            royal_image.setImageResource(R.drawable.royal_ruby);
+            flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_ruby);
+            imperal_image.setImageResource(R.drawable.imperial_ruby);
+            marquise_image.setImageResource(R.drawable.marq_ruby);
+        }
+        if (id == R.id.action_topaz){
+            flawless_royal_image.setImageResource(R.drawable.flawless_royal_topaz);
+            royal_image.setImageResource(R.drawable.royal_topaz);
+            flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_topaz);
+            imperal_image.setImageResource(R.drawable.imperial_topaz);
+            marquise_image.setImageResource(R.drawable.marq_topaz);
         }
         if (id == R.id.action_gem_type) {
             DialogFragment dialogFragment = new GemDialogFragment();

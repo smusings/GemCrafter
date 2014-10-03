@@ -7,5 +7,26 @@
         android:showAsAction="never" />
     <item android:id="@+id/action_gem_type"
         android:title="@string/action_gem_type"
-        android:showAsAction="never" />
+        android:showAsAction="never"
+        android:orderInCategory="99" />
+    <item android:id= "@+id/action_amethyst"
+        android:title="Amethyst"
+        android:showAsAction="never"
+        />
+    <item android:id= "@+id/action_diamond"
+        android:title="Diamond"
+        android:showAsAction="never"
+        />
+    <item android:id= "@+id/action_Emerald"
+        android:title="Emerald"
+        android:showAsAction="never"
+        />
+    <item android:id= "@+id/action_Ruby"
+        android:title="Ruby"
+        android:showAsAction="never"
+        />
+    <item android:id= "@+id/action_topaz"
+        android:title="Topaz"
+        android:showAsAction="never"
+        />
 </menu>
