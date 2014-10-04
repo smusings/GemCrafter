@@ -1,6 +1,5 @@
 package smusings.gemcrafter;
 
-import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 
 public class MainActivity extends SetUpActivity {
@@ -20,7 +18,6 @@ public class MainActivity extends SetUpActivity {
 
         //define the button
         calculateButton = (Button) findViewById(R.id.calculate_button);
-        gold_amount= (TextView) findViewById(R.id.gold_display);
 
         //define the need
         need_flawless_royal = (EditText) findViewById(R.id.need_flawless_royal);
@@ -48,31 +45,28 @@ public class MainActivity extends SetUpActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
-        final ImageView flawless_royal_image = (ImageView)findViewById(R.id.flawless_royal_gem);
-        final ImageView royal_image = (ImageView)findViewById(R.id.royal_gem);
-        final ImageView flawless_imperal_image = (ImageView)findViewById(R.id.flawless_imperial_gem);
-        final ImageView imperal_image = (ImageView)findViewById(R.id.imperial_gem);
-        final ImageView marquise_image = (ImageView)findViewById(R.id.marquise_gem);
+        //the imageviews to change gem type
+        ImageView flawless_royal_image = (ImageView)findViewById(R.id.flawless_royal_gem);
+        ImageView royal_image = (ImageView)findViewById(R.id.royal_gem);
+        ImageView flawless_imperal_image = (ImageView)findViewById(R.id.flawless_imperial_gem);
+        ImageView imperal_image = (ImageView)findViewById(R.id.imperial_gem);
+        ImageView marquise_image = (ImageView)findViewById(R.id.marquise_gem);
 
         int id = item.getItemId();
         if (id == R.id.action_reset) {
+            //need
             need_flawless_royal.setText("0");
             need_royal.setText("0");
             need_flawless_imperial.setText("0");
             need_imperial.setText("0");
             need_marquise.setText("0");
-
+            //have
             have_flawless_royal.setText("0");
             have_royal.setText("0");
             have_flawless_imperial.setText("0");
@@ -114,10 +108,6 @@ public class MainActivity extends SetUpActivity {
             flawless_imperal_image.setImageResource(R.drawable.flawless_imperial_topaz);
             imperal_image.setImageResource(R.drawable.imperial_topaz);
             marquise_image.setImageResource(R.drawable.marq_topaz);
-        }
-        if (id == R.id.action_gem_type) {
-            DialogFragment dialogFragment = new GemDialogFragment();
-            dialogFragment.show(getFragmentManager(), "GemDialogFragment");
         }
         return super.onOptionsItemSelected(item);
     }

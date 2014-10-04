@@ -6,10 +6,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class SetUpActivity extends Activity {
 
     public Button calculateButton;
-    public TextView gold_amount;
     // the edit text for need
     public EditText need_flawless_royal;
     public EditText need_royal;
@@ -52,9 +53,11 @@ public class SetUpActivity extends Activity {
     }
 
     public void amountNeeded(int count, EditText need){
+        //if greater than or equal to 0 we go on to the next one
         if (count >= 0){
             need.setText(Integer.toString(count));
         }
+        //else we are done and set the rest to 0
         else if (count < 0){
             //depending on what it is we need to zero different things for money calc
             if (need == need_flawless_royal){
@@ -210,6 +213,8 @@ public class SetUpActivity extends Activity {
     }
 
     public void totalGold(){
+        //identify the textView we need
+        TextView gold_amount= (TextView) findViewById(R.id.gold_display);
         //multiplies how many gems you need times the cost to make one of those gems
         int flawlessRoyalSum = Integer.parseInt(need_flawless_royal.getText().toString()) * 500000;
         int RoyalSum = Integer.parseInt(need_royal.getText().toString()) * 400000;
@@ -220,9 +225,10 @@ public class SetUpActivity extends Activity {
         int totalSum = flawlessRoyalSum + RoyalSum + flawlessImperialSum + ImperialSum;
 
         //sets the gold amount to text
-        gold_amount.setText(Integer.toString(totalSum));
+        gold_amount.setText(NumberFormat.getIntegerInstance().format(totalSum));
     }
 
+    //clears the editText when clicked on
     public void clearFieldTest(View v){
         ((EditText) v).setText("");
         ((EditText) v).setCursorVisible(true);
