@@ -44,9 +44,12 @@ public class SetUpActivity extends Activity {
     //we will use this to calculate how much of each gem we need per gem type
     public int getGemCount(int upper, int lowerNeed, int lowerHave){
         int gemCount;
+        //if the one above is 0, our process starts with this one
         if (upper == 0){
             gemCount = lowerNeed - lowerHave;
-        } else {
+        }
+        //otherwise we multiply our higher tier gem by 3 (1 upper level gem  is 3 of the lower ones)
+        else {
             gemCount = upper*3 - lowerHave;
         }
         return gemCount;

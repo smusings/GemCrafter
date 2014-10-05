@@ -74,6 +74,7 @@ public class MainActivity extends SetUpActivity {
             have_marquise.setText("0");
             return true;
         }
+        //changes gem colour type depending on option
         if (id == R.id.action_amethyst){
             flawless_royal_image.setImageResource(R.drawable.flawless_royal_amethyst);
             royal_image.setImageResource(R.drawable.royal_amethyst);
