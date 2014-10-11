@@ -3,6 +3,7 @@ package smusings.gemcrafter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +34,19 @@ public class MainActivity extends SetUpActivity {
         have_imperial = (EditText) findViewById(R.id.have_imperial);
         have_marquise = (EditText) findViewById(R.id.have_marquise);
 
+        //set the EditTexts to an onTouchListener to wipe free every time we use it
+        need_flawless_royal.setOnTouchListener(clearFieldTest);
+        need_royal.setOnTouchListener(clearFieldTest);
+        need_flawless_imperial.setOnTouchListener(clearFieldTest);
+        need_imperial.setOnTouchListener(clearFieldTest);
+        need_marquise.setOnTouchListener(clearFieldTest);
+
+        have_flawless_royal.setOnTouchListener(clearFieldTest);
+        have_royal.setOnTouchListener(clearFieldTest);
+        have_flawless_imperial.setOnTouchListener(clearFieldTest);
+        have_imperial.setOnTouchListener(clearFieldTest);
+        have_marquise.setOnTouchListener(clearFieldTest);
+
         //onclick runs flawlessRoyal, which triggers a chain of methods
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +61,19 @@ public class MainActivity extends SetUpActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+
+    //clears the editText when clicked on
+    View.OnTouchListener clearFieldTest = new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            if (MotionEvent.ACTION_DOWN == event.getAction()){
+                ((EditText) v).setText("");
+                ((EditText) v).setCursorVisible(true);
+            }
+            return false;
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

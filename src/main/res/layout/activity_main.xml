@@ -69,7 +69,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_need"/>
             <EditText
                 android:id="@+id/have_flawless_royal"
@@ -81,7 +80,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_have" />
         </LinearLayout>
         <LinearLayout
@@ -107,7 +105,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_need"/>
             <EditText
                 android:id="@+id/have_royal"
@@ -119,7 +116,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_have" />
         </LinearLayout>
         <LinearLayout
@@ -145,7 +141,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_need" />
             <EditText
                 android:id="@+id/have_flawless_imperial"
@@ -157,7 +152,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_have" />
         </LinearLayout>
         <LinearLayout
@@ -183,7 +177,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_need" />
             <EditText
                 android:id="@+id/have_imperial"
@@ -195,7 +188,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_have" />
         </LinearLayout>
         <LinearLayout
@@ -221,7 +213,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_need" />
             <EditText
                 android:id="@+id/have_marquise"
@@ -233,7 +224,6 @@
                 android:inputType="number"
                 android:imeOptions="actionDone"
                 android:gravity="center"
-                android:onClick="clearFieldTest"
                 android:contentDescription="@string/et_have" />
         </LinearLayout>
     </LinearLayout>

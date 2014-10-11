@@ -1,7 +1,6 @@
 package smusings.gemcrafter;
 
 import android.app.Activity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -226,9 +225,4 @@ public class SetUpActivity extends Activity {
         gold_amount.setText(NumberFormat.getIntegerInstance().format(totalSum));
     }
 
-    //clears the editText when clicked on
-    public void clearFieldTest(View v){
-        ((EditText) v).setText("");
-        ((EditText) v).setCursorVisible(true);
-    }
 }
