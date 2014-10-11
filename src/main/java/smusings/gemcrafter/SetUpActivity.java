@@ -104,14 +104,13 @@ public class SetUpActivity extends Activity {
         needFlawlessRoyal = Integer.parseInt(need_flawless_royal.getText().toString());
         haveFlawlessRoyal = Integer.parseInt(have_flawless_royal.getText().toString());
 
-
         //maths to see how many we need
         flawless_Royal_Count = needFlawlessRoyal - haveFlawlessRoyal;
 
         //number determines what we do
         amountNeeded(flawless_Royal_Count, need_flawless_royal);
 
-        //send to next gem
+        //send to next gem and set cursor to invisible
         need_flawless_royal.setCursorVisible(false);
         have_flawless_royal.setCursorVisible(false);
         royalGem();
@@ -126,7 +125,6 @@ public class SetUpActivity extends Activity {
             have_royal.setText("0");
         }
 
-
         needRoyal = Integer.parseInt(need_royal.getText().toString());
         haveRoyal = Integer.parseInt(have_royal.getText().toString());
 
@@ -136,11 +134,9 @@ public class SetUpActivity extends Activity {
         //numebr determiend what we do
         amountNeeded(royal_Count, need_royal);
 
-
         need_royal.setCursorVisible(false);
         have_royal.setCursorVisible(false);
         flawlessImperial();
-
     }
 
     public void flawlessImperial(){
@@ -153,7 +149,6 @@ public class SetUpActivity extends Activity {
         }
         needFlawlessImperial = Integer.parseInt(need_flawless_imperial.getText().toString());
         haveFlawlessImperial = Integer.parseInt(have_flawless_imperial.getText().toString());
-
 
         //maths to see how many we need
         flawless_imperial_Count = getGemCount(royal_Count,
@@ -178,7 +173,6 @@ public class SetUpActivity extends Activity {
         }
         needImperial = Integer.parseInt(need_imperial.getText().toString());
         haveImperial = Integer.parseInt(have_imperial.getText().toString());
-
 
         //maths to see how many we need
         imperial_Count = getGemCount(flawless_imperial_Count,
@@ -218,6 +212,7 @@ public class SetUpActivity extends Activity {
     public void totalGold(){
         //identify the textView we need
         TextView gold_amount= (TextView) findViewById(R.id.gold_display);
+
         //multiplies how many gems you need times the cost to make one of those gems
         int flawlessRoyalSum = Integer.parseInt(need_flawless_royal.getText().toString()) * 500000;
         int RoyalSum = Integer.parseInt(need_royal.getText().toString()) * 400000;

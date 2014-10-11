@@ -42,7 +42,6 @@ public class MainActivity extends SetUpActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -72,6 +71,7 @@ public class MainActivity extends SetUpActivity {
             have_flawless_imperial.setText("0");
             have_imperial.setText("0");
             have_marquise.setText("0");
+
             return true;
         }
         //changes gem colour type depending on option
