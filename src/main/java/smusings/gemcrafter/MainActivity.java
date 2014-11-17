@@ -18,23 +18,24 @@ public class MainActivity extends SetUpActivity {
         setContentView(R.layout.activity_main);
 
         //define the button
-        calculateButton = (Button) findViewById(R.id.calculate_button);
+        calculateButton         = (Button) findViewById(R.id.calculate_button);
 
         //define the need
-        need_flawless_royal = (EditText) findViewById(R.id.need_flawless_royal);
-        need_royal = (EditText) findViewById(R.id.need_royal);
-        need_flawless_imperial = (EditText) findViewById(R.id.need_flawless_imperial);
-        need_imperial = (EditText) findViewById(R.id.need_imperial);
-        need_marquise = (EditText) findViewById(R.id.need_marquise);
+        need_flawless_royal     = (EditText) findViewById(R.id.need_flawless_royal);
+        need_royal              = (EditText) findViewById(R.id.need_royal);
+        need_flawless_imperial  = (EditText) findViewById(R.id.need_flawless_imperial);
+        need_imperial           = (EditText) findViewById(R.id.need_imperial);
+        need_marquise           = (EditText) findViewById(R.id.need_marquise);
 
         //define the have
-        have_flawless_royal = (EditText) findViewById(R.id.have_flawless_royal);
-        have_royal = (EditText) findViewById(R.id.have_royal);
-        have_flawless_imperial = (EditText) findViewById(R.id.have_flawless_imperial);
-        have_imperial = (EditText) findViewById(R.id.have_imperial);
-        have_marquise = (EditText) findViewById(R.id.have_marquise);
+        have_flawless_royal     = (EditText) findViewById(R.id.have_flawless_royal);
+        have_royal              = (EditText) findViewById(R.id.have_royal);
+        have_flawless_imperial  = (EditText) findViewById(R.id.have_flawless_imperial);
+        have_imperial           = (EditText) findViewById(R.id.have_imperial);
+        have_marquise           = (EditText) findViewById(R.id.have_marquise);
 
         //set the EditTexts to an onTouchListener to wipe free every time we use it
+        //reason we are doing ontouch over xml is because xml only has ontouch and not onclick
         need_flawless_royal.setOnTouchListener(clearFieldTest);
         need_royal.setOnTouchListener(clearFieldTest);
         need_flawless_imperial.setOnTouchListener(clearFieldTest);
@@ -78,11 +79,11 @@ public class MainActivity extends SetUpActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //the imageviews to change gem type
-        ImageView flawless_royal_image = (ImageView)findViewById(R.id.flawless_royal_gem);
-        ImageView royal_image = (ImageView)findViewById(R.id.royal_gem);
+        ImageView flawless_royal_image   = (ImageView)findViewById(R.id.flawless_royal_gem);
+        ImageView royal_image            = (ImageView)findViewById(R.id.royal_gem);
         ImageView flawless_imperal_image = (ImageView)findViewById(R.id.flawless_imperial_gem);
-        ImageView imperal_image = (ImageView)findViewById(R.id.imperial_gem);
-        ImageView marquise_image = (ImageView)findViewById(R.id.marquise_gem);
+        ImageView imperal_image          = (ImageView)findViewById(R.id.imperial_gem);
+        ImageView marquise_image         = (ImageView)findViewById(R.id.marquise_gem);
 
         int id = item.getItemId();
         if (id == R.id.action_reset) {

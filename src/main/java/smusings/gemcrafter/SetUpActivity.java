@@ -23,59 +23,67 @@ public class SetUpActivity extends Activity {
     public EditText have_imperial;
     public EditText have_marquise;
     //ints for need/have
-    public Integer needFlawlessRoyal;
-    public Integer needRoyal;
-    public Integer needFlawlessImperial;
-    public Integer needImperial;
-    public Integer needMarquiese;
-    public Integer haveFlawlessRoyal;
-    public Integer haveRoyal;
-    public Integer haveFlawlessImperial;
-    public Integer haveImperial;
-    public Integer haveMarquiese;
+    public Integer  needFlawlessRoyal;
+    public Integer  needRoyal;
+    public Integer  needFlawlessImperial;
+    public Integer  needImperial;
+    public Integer  needMarquiese;
+    public Integer  haveFlawlessRoyal;
+    public Integer  haveRoyal;
+    public Integer  haveFlawlessImperial;
+    public Integer  haveImperial;
+    public Integer  haveMarquiese;
     //ints for the values
-    public int flawless_Royal_Count;
-    public int royal_Count;
-    public int flawless_imperial_Count;
-    public int imperial_Count;
-    public int marquise_Count;
+    public int      flawless_Royal_Count;
+    public int      royal_Count;
+    public int      flawless_imperial_Count;
+    public int      imperial_Count;
+    public int      marquise_Count;
 
     //we will use this to calculate how much of each gem we need per gem type
-    public int getGemCount(int upper, int lowerNeed, int lowerHave){
+    public int getGemCount(int upper, int lowerNeed, int lowerHave)
+    {
         int gemCount;
         //if the one above is 0, our process starts with this one
-        if (upper == 0){
+        if (upper == 0)
+        {
             gemCount = lowerNeed - lowerHave;
         }
         //otherwise we multiply our higher tier gem by 3 (1 upper level gem  is 3 of the lower ones)
-        else {
+        else
+        {
             gemCount = upper*3 - lowerHave;
         }
         return gemCount;
     }
 
-    public void amountNeeded(int count, EditText need){
+    public void amountNeeded(int count, EditText need)
+    {
         //if greater than or equal to 0 we go on to the next one
         if (count >= 0){
             need.setText(Integer.toString(count));
         }
         //else we are done and set the rest to 0
-        else if (count < 0){
+        else if (count < 0)
+        {
             //depending on what it is we need to zero different things for money calc
-            if (need == need_flawless_royal){
+            if (need == need_flawless_royal)
+            {
                 need_flawless_royal.setText("0");
                 need_royal.setText("0");
                 need_flawless_imperial.setText("0");
                 need_imperial.setText("0");
                 need_marquise.setText("0");
             }
-            else if (need == need_royal){
+            else if (need == need_royal)
+            {
                 need_royal.setText("0");
                 need_flawless_imperial.setText("0");
                 need_imperial.setText("0");
                 need_marquise.setText("0");
             }
-            else if (need == need_flawless_imperial){
+            else if (need == need_flawless_imperial)
+            {
                 need_flawless_imperial.setText("0");
                 need_imperial.setText("0");
                 need_marquise.setText("0");
@@ -84,20 +92,28 @@ public class SetUpActivity extends Activity {
                 need_imperial.setText("0");
                 need_marquise.setText("0");
             }
-            else if (need == need_marquise){
+            else {
                 need_marquise.setText("0");
             }
         }
     }
 
-    public void flawlessRoyal(){
-        //check to see if blank, if blank we set to 0
-        if (need_flawless_royal.getText().toString().matches("")){
-            need_flawless_royal.setText("0");
+    //checks if text is 0 or ""
+    public void nulCheck(EditText need, EditText have)
+    {
+        if (need.getText().toString().matches(""))
+        {
+            need.setText("0");
         }
-        if (have_flawless_royal.getText().toString().matches("")){
-            have_flawless_royal.setText("0");
+        if (have.getText().toString().matches(""))
+        {
+            have.setText("0");
         }
+    }
+
+    public void flawlessRoyal()
+    {
+        nulCheck(need_flawless_royal, have_flawless_royal);
 
         //defines the int we use
         needFlawlessRoyal = Integer.parseInt(need_flawless_royal.getText().toString());
@@ -115,15 +131,10 @@ public class SetUpActivity extends Activity {
         royalGem();
     }
 
-    public void royalGem(){
-        //check to see if blank, if blank we set to 0
-        if (need_royal.getText().toString().matches("")){
-            need_royal.setText("0");
-        }
-        if (have_royal.getText().toString().matches("")){
-            have_royal.setText("0");
-        }
-
+    public void royalGem()
+    {
+        nulCheck(need_royal, have_royal);
+        //set the ints we use
         needRoyal = Integer.parseInt(need_royal.getText().toString());
         haveRoyal = Integer.parseInt(have_royal.getText().toString());
 
@@ -138,14 +149,10 @@ public class SetUpActivity extends Activity {
         flawlessImperial();
     }
 
-    public void flawlessImperial(){
-        //check to see if blank, if blank we set to 0
-        if (need_flawless_imperial.getText().toString().matches("")){
-            need_flawless_imperial.setText("0");
-        }
-        if (have_flawless_imperial.getText().toString().matches("")){
-            have_flawless_imperial.setText("0");
-        }
+    public void flawlessImperial()
+    {
+        nulCheck(need_flawless_imperial, have_flawless_imperial);
+        //set the ints we use
         needFlawlessImperial = Integer.parseInt(need_flawless_imperial.getText().toString());
         haveFlawlessImperial = Integer.parseInt(have_flawless_imperial.getText().toString());
 
@@ -161,15 +168,10 @@ public class SetUpActivity extends Activity {
         imperialGem();
     }
 
-    public void imperialGem(){
-        //check to see if blank, if blank we set to 0
-        if (need_imperial.getText().toString().matches("")){
-            need_imperial.setText("0");
-        }
-        if (have_imperial.getText().toString().matches("")){
-            have_imperial.setText("0");
-            need_marquise.setText("0");
-        }
+    public void imperialGem()
+    {
+        nulCheck(need_imperial, have_imperial);
+        //set the ints we use
         needImperial = Integer.parseInt(need_imperial.getText().toString());
         haveImperial = Integer.parseInt(have_imperial.getText().toString());
 
@@ -185,14 +187,10 @@ public class SetUpActivity extends Activity {
         marquiseCount();
     }
 
-    public void marquiseCount(){
-        //check to see if blank, if blank we set to 0
-        if (need_marquise.getText().toString().matches("")){
-            need_marquise.setText("0");
-        }
-        if (have_marquise.getText().toString().matches("")){
-            have_marquise.setText("0");
-        }
+    public void marquiseCount()
+    {
+        nulCheck(need_marquise, have_marquise);
+        //set the ints we use
         needMarquiese = Integer.parseInt(need_marquise.getText().toString());
         haveMarquiese = Integer.parseInt(have_marquise.getText().toString());
 
@@ -208,18 +206,19 @@ public class SetUpActivity extends Activity {
         totalGold();
     }
 
-    public void totalGold(){
+    public void totalGold()
+    {
         //identify the textView we need
         TextView gold_amount= (TextView) findViewById(R.id.gold_display);
 
         //multiplies how many gems you need times the cost to make one of those gems
-        int flawlessRoyalSum = Integer.parseInt(need_flawless_royal.getText().toString()) * 500000;
-        int RoyalSum = Integer.parseInt(need_royal.getText().toString()) * 400000;
+        int flawlessRoyalSum    = Integer.parseInt(need_flawless_royal.getText().toString()) * 500000;
+        int RoyalSum            = Integer.parseInt(need_royal.getText().toString()) * 400000;
         int flawlessImperialSum = Integer.parseInt(need_flawless_imperial.getText().toString()) * 300000;
-        int ImperialSum = Integer.parseInt(need_imperial.getText().toString()) * 200000;
+        int ImperialSum         = Integer.parseInt(need_imperial.getText().toString()) * 200000;
 
         //sums up the total amount of gold needed to make a gem
-        int totalSum = flawlessRoyalSum + RoyalSum + flawlessImperialSum + ImperialSum;
+        int totalSum            = flawlessRoyalSum + RoyalSum + flawlessImperialSum + ImperialSum;
 
         //sets the gold amount to text
         gold_amount.setText(NumberFormat.getIntegerInstance().format(totalSum));
